@@ -1,0 +1,149 @@
+/* Reset some basic elements to ensure consistency across browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    animation: fadeInUp 1s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background: linear-gradient(135deg, rgba(255, 223, 186, 0.3), rgba(255, 200, 200, 0.3));
+    z-index: 0;
+    border-radius: 50%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 25px;
+    color: #333333;
+    margin-bottom: 30px;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+label {
+    font-size: 18px;
+    color: #555555;
+    margin-bottom: -15px;
+}
+
+textarea {
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    resize: vertical;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+textarea:focus {
+    border-color: #ff6f61;
+    box-shadow: 0 0 8px rgba(255, 111, 97, 0.3);
+    outline: none;
+}
+
+button {
+    padding: 15px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #e65c50;
+    transform: translateY(-2px);
+}
+
+button:active {
+    background-color: #c44e4e;
+}
+
+.result {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #ffe6e6;
+    border: 2px solid #ff6f61;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-out;
+    position: relative;
+    z-index: 1;
+}
+
+.result h2 {
+    margin-top: 0;
+    color: #ff6f61;
+    font-size: 22px;
+    font-weight: 600;
+    display: inline;
+}
+
+.result p {
+    font-size: 25px;
+    color: #333333;
+    display: inline;
+    font-weight: bold;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

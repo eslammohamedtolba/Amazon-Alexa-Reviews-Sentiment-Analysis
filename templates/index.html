@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Alexa Reviews Sentiment Analysis</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Amazon Alexa Reviews Sentiment Analysis</h1>
+        <form method="post" action="/predict">
+            <label for="Text">Enter your review:</label>
+            <textarea id="Text" name="Text" rows="4" required></textarea>
+            <button type="submit">Analyze Sentiment</button>
+        </form>
+        {% if prediction %}
+            <div class="result">
+                <h2>Sentiment Analysis Result:</h2>
+                <p>{{ prediction }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
